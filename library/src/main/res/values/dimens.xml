@@ -2,4 +2,31 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="theme_small_dp">10dp</dimen>
+    <dimen name="theme_small_ext_dp">15dp</dimen>
+    <dimen name="theme_normal_dp">20dp</dimen>
+    <dimen name="theme_normal_ext_dp">30dp</dimen>
+    <dimen name="theme_medium_dp">40dp</dimen>
+    <dimen name="theme_medium_ext_dp">50dp</dimen>
+    <dimen name="theme_large_dp">60dp</dimen>
+    <dimen name="theme_xlarge_dp">100dp</dimen>
+    <dimen name="login_link_font_size">14sp</dimen>
+    <dimen name="form_heading_font_size">28sp</dimen>
+    <dimen name="form_input_font_size">18sp</dimen>
+
+    <!-- card item -->
+    <dimen name="card_item_txt_title">24sp</dimen>
+    <dimen name="card_item_initial">21sp</dimen>
+    <dimen name="card_item_initial_size">18sp</dimen>
+    <dimen name="card_item_title">15sp</dimen>
+    <dimen name="card_item_title_ext">16sp</dimen>
+    <dimen name="card_item_txt">14sp</dimen>
+    <dimen name="card_item_subtxt">12sp</dimen>
+    <dimen name="card_item_space">15dp</dimen>
+    <dimen name="card_item_button_height">30dp</dimen>
+    <dimen name="card_item_txt_space">0dp</dimen>
+    <dimen name="card_item_drawable_space">4dp</dimen>
+    <dimen name="card_item_drawable_vspace">33dp</dimen>
+    <!-- card item -->
+
 </resources>

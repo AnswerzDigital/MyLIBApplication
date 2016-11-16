@@ -1,0 +1,51 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/theme_normal_dp"
+    android:paddingLeft="@dimen/theme_small_dp"
+    android:paddingRight="@dimen/theme_small_dp">
+
+
+    <chehara.mylibapplication.TypefaceTextView
+        android:id="@+id/textViewdialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/theme_normal_dp"
+        android:background="@drawable/card"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:orientation="vertical"
+        android:paddingBottom="60dp"
+        android:paddingTop="@dimen/theme_medium_dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="M a s t e r   p a s s w o r d   i s   u s e d   f o r   e n t e r i n g   i n t o   t h e   r o o m   i n   c a s e   y o u   f o r g o t   y o u r   d a i l y   p a s s w o r d"
+        android:textColor="@color/black_trans_level1"
+        android:textSize="@dimen/card_item_txt" />
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:adjustViewBounds="false"
+        android:contentDescription="logo"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+
+    <chehara.mylibapplication.TypefaceButton
+        android:id="@+id/btnOk"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:text="@string/ok" />
+
+</FrameLayout>
