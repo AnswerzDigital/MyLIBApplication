@@ -13,13 +13,6 @@ android {
         versionName "1.0"
     }
 
-    productFlavors {
-        armv7 {
-            ndk {
-                abiFilters "armeabi-v7a", ""
-            }
-        }
-    }
 
     buildTypes {
         release {
