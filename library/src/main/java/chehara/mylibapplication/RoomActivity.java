@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.xwalk.core.XWalkActivity;
 import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
@@ -33,7 +34,7 @@ import org.xwalk.core.XWalkView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class RoomActivity extends AppCompatActivity {
+public class RoomActivity extends XWalkActivity {
 
 
     public int pageIndex;
@@ -41,7 +42,7 @@ public class RoomActivity extends AppCompatActivity {
 
     String screenName = "HomeScreen.Room";
 
-   public XWalkView xWalkWebView;
+    public XWalkView xWalkWebView;
 
     public String url;
     ProgressDialog dialog;
@@ -60,9 +61,14 @@ public class RoomActivity extends AppCompatActivity {
     Context context;
 
     @Override
+    protected void onXWalkReady() {
+        xWalkWebView.load(url, null);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_main);
+        // setContentView(R.layout.activity_main);
 
         try {
             XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
@@ -83,9 +89,6 @@ public class RoomActivity extends AppCompatActivity {
             //dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
 
-
-
-
             dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
@@ -95,10 +98,7 @@ public class RoomActivity extends AppCompatActivity {
             });
 
 
-
-
-
-           // xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
+            // xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
 
 
             alertDialog = new Dialog(context);
@@ -115,9 +115,8 @@ public class RoomActivity extends AppCompatActivity {
             });
 
 
-          //  xWalkWebView.clearCache(true);
+            //  xWalkWebView.clearCache(true);
             // Log.e("TAG", url);
-
 
 
             // xWalkWebView.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.banner4));
@@ -125,7 +124,7 @@ public class RoomActivity extends AppCompatActivity {
 
             XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
             xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
-            xWalkWebView.load(url, null);
+
 
             //  xWalkWebView.getNavigationHistory().clear();
             xWalkWebView.setUIClient(new XWalkUIClient(xWalkWebView) {
