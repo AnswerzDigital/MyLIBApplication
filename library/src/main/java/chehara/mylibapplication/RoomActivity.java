@@ -20,13 +20,16 @@ import android.webkit.ValueCallback;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-/*
+
 import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
 import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
-*/
+
+import org.xwalk.core.XWalkPreferences;
+import org.xwalk.core.XWalkView;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -38,7 +41,7 @@ public class RoomActivity extends AppCompatActivity {
 
     String screenName = "HomeScreen.Room";
 
-  //  public XWalkView xWalkWebView;
+   public XWalkView xWalkWebView;
 
     public String url;
     ProgressDialog dialog;
@@ -60,7 +63,7 @@ public class RoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_main);
-/*
+
         try {
             XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
             Intent intent = getIntent();
@@ -379,7 +382,7 @@ public class RoomActivity extends AppCompatActivity {
             }
             //show error message as per you need.
         }
-        */
+
     }
 
 
