@@ -20,13 +20,13 @@ import android.webkit.ValueCallback;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+/*
 import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
 import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
-
+*/
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -38,7 +38,7 @@ public class RoomActivity extends AppCompatActivity {
 
     String screenName = "HomeScreen.Room";
 
-    public XWalkView xWalkWebView;
+  //  public XWalkView xWalkWebView;
 
     public String url;
     ProgressDialog dialog;
@@ -59,8 +59,8 @@ public class RoomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+       // setContentView(R.layout.activity_main);
+/*
         try {
             XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
             Intent intent = getIntent();
@@ -80,18 +80,7 @@ public class RoomActivity extends AppCompatActivity {
             //dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
 
-          /*
-            dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener(){
-                // Set a click listener for progress dialog cancel button
-                @Override
-                public void onClick(DialogInterface dialog, int which){
-                    // dismiss the progress dialog
-                    dialog.dismiss();
-                    // Tell the system about cancellation
 
-                }
-            });
-            */
 
 
             dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -104,9 +93,9 @@ public class RoomActivity extends AppCompatActivity {
 
 
 
-        /* textNext onclick load next splash screen*/
 
-            xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
+
+           // xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
 
 
             alertDialog = new Dialog(context);
@@ -123,16 +112,9 @@ public class RoomActivity extends AppCompatActivity {
             });
 
 
-            xWalkWebView.clearCache(true);
+          //  xWalkWebView.clearCache(true);
             // Log.e("TAG", url);
-            /*
 
-            if (CheharaConst.DEVICE_API_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                xWalkWebView.setBackgroundDrawable(getResources().getDrawable(R.drawable.banner4));
-            } else {
-                xWalkWebView.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.banner4));
-            }
-*/
 
 
             // xWalkWebView.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.banner4));
@@ -294,14 +276,7 @@ public class RoomActivity extends AppCompatActivity {
         }
     }
 
-    /*
-    @Override
-    protected void onNewIntent(Intent intent) {
-        if (xWalkWebView != null) {
-            xWalkWebView.onNewIntent(intent);
-        }
-    }
-    */
+
     @Override
     public void onStart() {
         try {
@@ -404,6 +379,7 @@ public class RoomActivity extends AppCompatActivity {
             }
             //show error message as per you need.
         }
+        */
     }
 
 
