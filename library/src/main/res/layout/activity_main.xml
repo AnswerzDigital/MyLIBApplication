@@ -11,4 +11,5 @@
         android:background="@color/black"
         android:orientation="vertical"></org.xwalk.core.XWalkView>
 
+
 </RelativeLayout>
