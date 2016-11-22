@@ -1,5 +1,6 @@
 package chehara.mylibapplication;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -34,7 +35,7 @@ import org.xwalk.core.XWalkView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class RoomActivity extends XWalkActivity {
+public class RoomActivity extends Activity {
 
 
     public int pageIndex;
@@ -60,10 +61,7 @@ public class RoomActivity extends XWalkActivity {
     public String altUrl;
     Context context;
 
-    @Override
-    protected void onXWalkReady() {
-        xWalkWebView.load(url, null);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +111,7 @@ public class RoomActivity extends XWalkActivity {
                     alertDialog.cancel();
                 }
             });
-
+            xWalkWebView.load(url, null);
 
             //  xWalkWebView.clearCache(true);
             // Log.e("TAG", url);
