@@ -35,7 +35,7 @@ import org.xwalk.core.XWalkView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class RoomActivity extends Activity {
+public class RoomActivity extends XWalkActivity {
 
 
     public int pageIndex;
@@ -62,11 +62,15 @@ public class RoomActivity extends Activity {
     Context context;
 
 
+    @Override
+    protected void onXWalkReady() {
+        xWalkWebView.load(url, null);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         try {
             XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
@@ -74,7 +78,7 @@ public class RoomActivity extends Activity {
 
 
             Bundle extras = intent.getExtras();
-            url = intent.hasExtra(CheharaUtils.URL) ? intent.getStringExtra(CheharaUtils.URL) : "";
+            url = intent.hasExtra(CheharaUtils.URL) ? intent.getStringExtra(CheharaUtils.URL) : "www.google.com";
             shareURL = intent.hasExtra(CheharaUtils.SHAREURL) ? intent.getStringExtra(CheharaUtils.SHAREURL) : "";
             room = intent.hasExtra(CheharaUtils.ROOM) ? intent.getStringExtra(CheharaUtils.ROOM) : "";
             dialog = new ProgressDialog(context);
@@ -111,7 +115,7 @@ public class RoomActivity extends Activity {
                     alertDialog.cancel();
                 }
             });
-            xWalkWebView.load(url, null);
+            //  xWalkWebView.load(url, null);
 
             //  xWalkWebView.clearCache(true);
             // Log.e("TAG", url);
