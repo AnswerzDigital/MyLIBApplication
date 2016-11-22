@@ -1,1 +1,1 @@
-include ':library', ':crosswalk-18.48.477.13', ':xwalk_core_library_java_app_part'
+include ':library', ':xwalk_core_library_java'
