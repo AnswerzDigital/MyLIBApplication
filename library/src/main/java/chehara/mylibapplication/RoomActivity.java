@@ -45,7 +45,7 @@ public class RoomActivity extends XWalkActivity {
 
     public XWalkView xWalkWebView;
 
-    public String url;
+    public String url = "https://m.cheharatime.com/";
     ProgressDialog dialog;
     Dialog alertDialog;
     Button btnOk;
@@ -73,7 +73,7 @@ public class RoomActivity extends XWalkActivity {
             context = this;
 
             Bundle extras = intent.getExtras();
-            url = intent.hasExtra(CheharaUtils.URL) ? intent.getStringExtra(CheharaUtils.URL) : "www.google.com";
+            //url = intent.hasExtra(CheharaUtils.URL) ? intent.getStringExtra(CheharaUtils.URL) : "www.google.com";
             shareURL = intent.hasExtra(CheharaUtils.SHAREURL) ? intent.getStringExtra(CheharaUtils.SHAREURL) : "";
             room = intent.hasExtra(CheharaUtils.ROOM) ? intent.getStringExtra(CheharaUtils.ROOM) : "";
             dialog = new ProgressDialog(context);
