@@ -70,7 +70,7 @@ public class RoomActivity extends XWalkActivity {
         try {
             XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
             Intent intent = getIntent();
-
+            context = this;
 
             Bundle extras = intent.getExtras();
             url = intent.hasExtra(CheharaUtils.URL) ? intent.getStringExtra(CheharaUtils.URL) : "www.google.com";
