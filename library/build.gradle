@@ -21,7 +21,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res2'] } }
+
 }
 
 repositories {
@@ -35,5 +36,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
     // compile 'org.xwalk:xwalk_core_library:18.48.477.13'
-    compile files('libs/xwalk_core_library_java_app_part.jar')
+    compile files('libs/xwalk_core_library_java.jar')
 }
