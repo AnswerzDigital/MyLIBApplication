@@ -63,11 +63,6 @@ public class RoomActivity extends XWalkActivity {
 
 
     @Override
-    protected void onXWalkReady() {
-        xWalkWebView.load(url, null);
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -89,7 +84,6 @@ public class RoomActivity extends XWalkActivity {
             // dialog.setIndeterminateDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.animation));
             // dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
             //dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-
 
 
             dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -230,6 +224,11 @@ public class RoomActivity extends XWalkActivity {
         }
 
 
+    }
+
+    @Override
+    protected void onXWalkReady() {
+        xWalkWebView.load(url, null);
     }
 
     public class JsInterface {
