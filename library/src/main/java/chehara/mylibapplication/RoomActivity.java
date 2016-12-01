@@ -313,7 +313,7 @@ public class RoomActivity extends XWalkActivity {
         super.onResume();
         if (xWalkWebView != null) {
            // xWalkWebView.resumeTimers();
-            xWalkWebView.onShow();
+           // xWalkWebView.onShow();
         }
     }
 
