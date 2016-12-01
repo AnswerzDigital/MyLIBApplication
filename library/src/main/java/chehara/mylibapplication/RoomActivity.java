@@ -300,7 +300,7 @@ public class RoomActivity extends XWalkActivity {
     public void onPause() {
 
         if (xWalkWebView != null) {
-            xWalkWebView.pauseTimers();
+          //  xWalkWebView.pauseTimers();
             xWalkWebView.onHide();
         }
         super.onPause();
@@ -312,7 +312,7 @@ public class RoomActivity extends XWalkActivity {
 
         super.onResume();
         if (xWalkWebView != null) {
-            xWalkWebView.resumeTimers();
+           // xWalkWebView.resumeTimers();
             xWalkWebView.onShow();
         }
     }
