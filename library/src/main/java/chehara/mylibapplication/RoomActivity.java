@@ -63,7 +63,7 @@ public class RoomActivity extends XWalkActivity {
         setContentView(R.layout.activity_crosswalk);
 
         try {
-            XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
+            //XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
             Intent intent = getIntent();
             context = this;
 
@@ -141,7 +141,7 @@ public class RoomActivity extends XWalkActivity {
                         loadTimer.schedule(new loaderTask(), loadingLimit);
                         isPageLoadedComplete = false;
                         dialog.setMessage(message);
-                       
+
                         if (Build.VERSION.SDK_INT >= 21) {
                             getWindow().setStatusBarColor(ContextCompat.getColor(context, R.color.room));
                         }
