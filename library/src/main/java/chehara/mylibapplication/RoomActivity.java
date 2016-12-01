@@ -115,7 +115,7 @@ public class RoomActivity extends XWalkActivity {
             //  xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
 
             XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
-            xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
+          //  xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
 
 
             //  xWalkWebView.getNavigationHistory().clear();
