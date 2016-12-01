@@ -1,6 +1,5 @@
 package chehara.mylibapplication;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,7 +10,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.http.SslError;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,9 +25,6 @@ import org.xwalk.core.XWalkActivity;
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
 import org.xwalk.core.XWalkUIClient;
-import org.xwalk.core.XWalkView;
-
-import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkView;
 
 import java.util.Timer;
@@ -65,7 +60,7 @@ public class RoomActivity extends XWalkActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_crosswalk);
 
         try {
             XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
