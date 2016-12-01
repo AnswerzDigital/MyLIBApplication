@@ -40,7 +40,7 @@ public class RoomActivity extends XWalkActivity {
 
     public XWalkView xWalkWebView;
 
-    public String url = "https://m.cheharatime.com/";
+    public String url;
     ProgressDialog dialog;
     Dialog alertDialog;
     Button btnOk;
@@ -68,7 +68,7 @@ public class RoomActivity extends XWalkActivity {
             context = this;
 
             Bundle extras = intent.getExtras();
-            //url = intent.hasExtra(CheharaUtils.URL) ? intent.getStringExtra(CheharaUtils.URL) : "www.google.com";
+            url = intent.hasExtra(CheharaUtils.URL) ? intent.getStringExtra(CheharaUtils.URL) : "www.google.com";
             shareURL = intent.hasExtra(CheharaUtils.SHAREURL) ? intent.getStringExtra(CheharaUtils.SHAREURL) : "";
             room = intent.hasExtra(CheharaUtils.ROOM) ? intent.getStringExtra(CheharaUtils.ROOM) : "";
             dialog = new ProgressDialog(context);
@@ -115,7 +115,7 @@ public class RoomActivity extends XWalkActivity {
             //  xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
 
             XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
-          //  xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
+            //  xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
 
 
             //  xWalkWebView.getNavigationHistory().clear();
@@ -141,7 +141,7 @@ public class RoomActivity extends XWalkActivity {
                         loadTimer.schedule(new loaderTask(), loadingLimit);
                         isPageLoadedComplete = false;
                         dialog.setMessage(message);
-                        bannerLinear.setVisibility(View.VISIBLE);
+                       
                         if (Build.VERSION.SDK_INT >= 21) {
                             getWindow().setStatusBarColor(ContextCompat.getColor(context, R.color.room));
                         }
@@ -300,7 +300,7 @@ public class RoomActivity extends XWalkActivity {
     public void onPause() {
 
         if (xWalkWebView != null) {
-          //  xWalkWebView.pauseTimers();
+            //  xWalkWebView.pauseTimers();
             xWalkWebView.onHide();
         }
         super.onPause();
@@ -312,8 +312,8 @@ public class RoomActivity extends XWalkActivity {
 
         super.onResume();
         if (xWalkWebView != null) {
-           // xWalkWebView.resumeTimers();
-           // xWalkWebView.onShow();
+            // xWalkWebView.resumeTimers();
+            // xWalkWebView.onShow();
         }
     }
 
