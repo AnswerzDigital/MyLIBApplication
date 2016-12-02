@@ -112,10 +112,10 @@ public class RoomActivity extends XWalkActivity {
 
 
             //xWalkWebView.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.banner4));
-              xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
+            xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
 
             XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
-              xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
+            xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
 
 
             //  xWalkWebView.getNavigationHistory().clear();
@@ -221,57 +221,57 @@ public class RoomActivity extends XWalkActivity {
 
     }
 
+
+    public class JsInterface {
+
+        public JsInterface() {
+        }
+
+        @org.xwalk.core.JavascriptInterface
+        public void closeRoom() {
+            try {
+                isPageLoadedComplete = true;
+                loadTimer.cancel();
+
+                isLeave = false;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        @org.xwalk.core.JavascriptInterface
+        public void inviteRoom(String pin) {
+
+            //  Toast.makeText(getActivity(), pin, Toast.LENGTH_LONG).show();
+            if (!pin.equalsIgnoreCase("")) {
+                shareURL = shareURL + "\nPin : " + pin;
+                Log.e("TAG", shareURL);
+            }
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, shareURL);
+            sendIntent.setType("text/plain");
+            startActivity(Intent.createChooser(sendIntent, "CheharaTime"));
+        }
+
+        @org.xwalk.core.JavascriptInterface
+        public void inviteRoom() {
+
+            //  Toast.makeText(getActivity(), pin, Toast.LENGTH_LONG).show();
+
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, shareURL);
+            sendIntent.setType("text/plain");
+            startActivity(Intent.createChooser(sendIntent, "CheharaTime"));
+        }
+    }
+
     @Override
     protected void onXWalkReady() {
         xWalkWebView.load(url, null);
     }
-
-
-        public class JsInterface {
-
-            public JsInterface() {
-            }
-
-            @org.xwalk.core.JavascriptInterface
-            public void closeRoom() {
-                try {
-                    isPageLoadedComplete = true;
-                    loadTimer.cancel();
-
-                    isLeave = false;
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @org.xwalk.core.JavascriptInterface
-            public void inviteRoom(String pin) {
-
-                //  Toast.makeText(getActivity(), pin, Toast.LENGTH_LONG).show();
-                if (!pin.equalsIgnoreCase("")) {
-                    shareURL = shareURL + "\nPin : " + pin;
-                    Log.e("TAG", shareURL);
-                }
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, shareURL);
-                sendIntent.setType("text/plain");
-                startActivity(Intent.createChooser(sendIntent, "CheharaTime"));
-            }
-
-            @org.xwalk.core.JavascriptInterface
-            public void inviteRoom() {
-
-                //  Toast.makeText(getActivity(), pin, Toast.LENGTH_LONG).show();
-
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, shareURL);
-                sendIntent.setType("text/plain");
-                startActivity(Intent.createChooser(sendIntent, "CheharaTime"));
-            }
-        }
 
 
     @Override
@@ -300,7 +300,7 @@ public class RoomActivity extends XWalkActivity {
     public void onPause() {
 
         if (xWalkWebView != null) {
-             xWalkWebView.pauseTimers();
+            xWalkWebView.pauseTimers();
             xWalkWebView.onHide();
         }
         super.onPause();
