@@ -111,11 +111,11 @@ public class RoomActivity extends XWalkActivity {
             // Log.e("TAG", url);
 
 
-            // xWalkWebView.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.banner4));
-            //  xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
+            //xWalkWebView.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.banner4));
+              xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
 
             XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
-            //  xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
+              xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
 
 
             //  xWalkWebView.getNavigationHistory().clear();
@@ -226,7 +226,7 @@ public class RoomActivity extends XWalkActivity {
         xWalkWebView.load(url, null);
     }
 
-    /*
+
         public class JsInterface {
 
             public JsInterface() {
@@ -273,7 +273,7 @@ public class RoomActivity extends XWalkActivity {
             }
         }
 
-    */
+
     @Override
     public void onStart() {
         try {
@@ -300,7 +300,7 @@ public class RoomActivity extends XWalkActivity {
     public void onPause() {
 
         if (xWalkWebView != null) {
-            //  xWalkWebView.pauseTimers();
+             xWalkWebView.pauseTimers();
             xWalkWebView.onHide();
         }
         super.onPause();
@@ -312,8 +312,8 @@ public class RoomActivity extends XWalkActivity {
 
         super.onResume();
         if (xWalkWebView != null) {
-            // xWalkWebView.resumeTimers();
-            // xWalkWebView.onShow();
+            xWalkWebView.resumeTimers();
+            xWalkWebView.onShow();
         }
     }
 
