@@ -112,7 +112,7 @@ public class RoomActivity extends XWalkActivity {
 
 
             //xWalkWebView.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.banner4));
-            xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
+
 
             XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
             xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
@@ -271,6 +271,7 @@ public class RoomActivity extends XWalkActivity {
     @Override
     protected void onXWalkReady() {
         xWalkWebView.load(url, null);
+        xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
     }
 
 
