@@ -115,7 +115,6 @@ public class RoomActivity extends XWalkActivity {
 
 
             XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
-            xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
 
 
             //  xWalkWebView.getNavigationHistory().clear();
@@ -213,6 +212,8 @@ public class RoomActivity extends XWalkActivity {
 
             });
 
+           //  if(xWalkWebView.getSettings().is)
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -272,6 +273,7 @@ public class RoomActivity extends XWalkActivity {
     protected void onXWalkReady() {
         xWalkWebView.load(url, null);
         xWalkWebView.addJavascriptInterface(new JsInterface(), "Mobile");
+        xWalkWebView.setBackgroundColor(ContextCompat.getColor(context, R.color.theme_new_secondary));
     }
 
 
