@@ -19,6 +19,7 @@ import android.webkit.ValueCallback;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.xwalk.core.XWalkActivity;
 
@@ -212,7 +213,7 @@ public class RoomActivity extends XWalkActivity {
 
             });
 
-           //  if(xWalkWebView.getSettings().is)
+            //  if(xWalkWebView.hasw)
 
 
         } catch (Exception e) {
@@ -235,7 +236,7 @@ public class RoomActivity extends XWalkActivity {
                 loadTimer.cancel();
 
                 isLeave = false;
-
+                Toast.makeText(context, "Home", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -303,8 +304,10 @@ public class RoomActivity extends XWalkActivity {
     public void onPause() {
 
         if (xWalkWebView != null) {
-            xWalkWebView.pauseTimers();
-            xWalkWebView.onHide();
+            if (isXWalkReady()) {
+                xWalkWebView.pauseTimers();
+                xWalkWebView.onHide();
+            }
         }
         super.onPause();
     }
@@ -315,8 +318,10 @@ public class RoomActivity extends XWalkActivity {
 
         super.onResume();
         if (xWalkWebView != null) {
-            xWalkWebView.resumeTimers();
-            xWalkWebView.onShow();
+            if (isXWalkReady()) {
+                xWalkWebView.resumeTimers();
+                xWalkWebView.onShow();
+            }
         }
     }
 
