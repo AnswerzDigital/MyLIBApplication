@@ -44,7 +44,7 @@ public class CustomDialog {
 			public void onShow(DialogInterface dialog) {
 				AlertDialog alertDialog = (AlertDialog) dialog;
 				Typeface roboto = Typeface.createFromAsset(context.getAssets(),
-						"fonts/Roboto-Light.ttf");
+						"fonts/Aileron-Light.ttf");
 				Button buttonP = alertDialog
 						.getButton(DialogInterface.BUTTON_POSITIVE);
 				buttonP.setTypeface(roboto);
